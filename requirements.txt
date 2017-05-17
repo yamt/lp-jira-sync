@@ -1,0 +1,4 @@
+jira
+launchpadlib
+simplejson
+oslo.config
