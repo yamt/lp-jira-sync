@@ -35,8 +35,13 @@ Installation
 Configuration
 -------------
 
-This tool uses `oslo.config` for cli options.
+This tool uses `oslo.config` [#oslo_config]_ for cli options.
 See `lp-jira-sync --help` output for the list of options.
+For secret values like credentials, I recommend to
+store them in a configuration file and specify it by `--config-file`
+option, rather than specifying them on the command line directly.
+
+.. [#oslo_config] https://docs.openstack.org/developer/oslo.config/
 
 
 Sub commands
