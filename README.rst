@@ -17,7 +17,7 @@ the cumbersome processes in the environment.
 
 .. [#launchpad_networking_midonet] https://bugs.launchpad.net/networking-midonet/
 .. [#midokura_jira] https://midobugs.atlassian.net
-.. [#networking_midonet] https://github.com/openstack/networking-midonet
+.. [#networking_midonet] https://docs.openstack.org/developer/networking-midonet/
 
 
 Installation
