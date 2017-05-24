@@ -52,3 +52,11 @@ create-jira-issues
 
 Scan Launchpad bug tasks and create the corresponding issues on JIRA
 unless already exist.
+
+Workflow:
+
+    1. Add `midokura-jira-tracked` tag to the Launchpad bugs which
+       you want to track on JIRA.
+
+    2. Run `lp-jira-sync` command.  It will find the bugs you marked above
+       and create JIRA issues.
