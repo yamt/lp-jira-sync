@@ -83,13 +83,20 @@ def get_lp_link(j, i):
 
 
 def scan(j, callback=None):
-    issues = j.search_issues('labels = %(label)s' % {
-        'label': CONF.jira.marker_label,
-    })
-    for issue in issues:
-        # print issue.key, issue.fields.summary
-        if callback is not None:
-            callback(issue)
+    # NOTE(yamamoto): We don't use maxResults=False as it seems broken
+    # in case the server didn't return isLast.
+    startAt = 0
+    while True:
+        issues = j.search_issues('labels = %(label)s' % {
+            'label': CONF.jira.marker_label,
+        }, startAt=startAt)
+        if len(issues) == 0:
+            break
+        startAt += len(issues)
+        for issue in issues:
+            # print issue.key, issue.fields.summary
+            if callback is not None:
+                callback(issue)
 
 
 def create_issue_for_lp_bug(j, bug):
